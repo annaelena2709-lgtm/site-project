@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Обществознание Онлайн</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #53377A;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #7851A9;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    main {
+      padding: 2rem;
+    }
+    .page {
+      display: none;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .page.active {
+      display: block;
+    }
+    footer {
+      background-color: #8A2BE2;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+
+    .question {
+      margin-bottom: 1.5rem;
+    }
+    .question label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+    button {
+      background-color: #543964;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+    }
+    button:hover {
+      background-color: #3e2a50;
+    }
+    #result {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .correct { color: #27ae60; background-color: #d5f5e3; }
+    .good { color: #f39c12; background-color: #fef9e7; }
+    .wrong { color: #e74c3c; background-color: #fadbd8; }
+
+    h2 {
+      color: #53377A;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 id="mainTitle">Маленький гражданин большой страны</h1>
+  <h1 id="testTitle" style="display:none;">Тест по теме: Гражданское общество</h1>
+  <h1 id="konstitutsiyaTitle" style="display:none;">Конституция Российской Федерации</h1>
+  <h1 id="ekonomikaTitle" style="display:none;">Основы экономики</h1>
+  <h1 id="topicsTitle" style="display:none;">Темы по обществознанию</h1>
+  <p>Обществознание Онлайн</p>
+</header>
+
+<nav>
+  <a href="#" onclick="showPage('home')">Главная</a>
+  <a href="#" onclick="showPage('topics')">Темы</a>
+  <a href="tests.html">Тесты</a>
+  <a href="articles.html">Игры</a>
+</nav>
+
+<main>
+  <!-- Главная страница -->
+  <div id="homePage" class="page active">
+    <div class="card">
+      <h2>Добро пожаловать!</h2>
+      <p>Этот сайт поможет вам освоить основы обществознания: от государства и права до экономики и социальных отношений. Подходит для школьников.</p>
+    </div>
+
+    <div class="card">
+      <h3>Популярные темы для средней школы</h3>
+      <ul>
+        <li><a href="#" onclick="showPage('konstitutsiya')">Конституция РФ</a></li>
+        <li><a href="#" onclick="showPage('ekonomika')">Основы экономики</a></li>
+        <li><a href="topics.html#pravo">Право и правонарушения</a></li>
+        <li><a href="topics.html#politika">Политическая система</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Темы для младших классов</h3>
+      <ul>
+        <li><a href="topics.html#gosudarstvo">Что такое государство</a></li>
+        <li><a href="topics.html#ya-v-gosudarstve">Кто я в государстве</a></li>
+        <li><a href="topics.html#moi-prava">Мои права</a></li>
+        <li><a href="topics.html#moi-obyazannosti">Мои обязанности</a></li>
+        <li>
+          <details>
+            <summary><a href="topics.html#gos_simvl">Государственные символы</a></summary>
+            <ul>
+              <li><a href="topics.html#flag">Флаг</a></li>
+              <li><a href="topics.html#gerb">Герб</a></li>
+              <li><a href="topics.html#gimnn">Гимн</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>📚 Пройдите пробный тест</h3>
+      <p>Проверьте свои знания по теме "Гражданское общество" — всего 5 вопросов!</p>
+      <button onclick="showPage('test')" style="background: #543964; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; display: inline-block;">Начать тест</button>
+    </div>
+  </div>
+
+  <!-- Страница теста сделать 5 вопросов надо -->
+  <div id="testPage" class="page">
+    <div class="card">
+      <p>Ответьте на 5 вопросов. Выберите один правильный вариант в каждом.</p>
+
+      <form id="quizForm">
+        <!-- Вопросы (потом прописать ответы)-->
+        <div class="question">
+          <p><strong>1. Что такое гражданское общество?</strong></p>
+          <label><input type="radio" name="q1" value="a"> Это армия и полиция</label>
+          <label><input type="radio" name="q1" value="b"> Это совокупность государственных органов</label>
+          <label><input type="radio" name="q1" value="c"> Это негосударственные объединения и инициативы граждан</label>
+          <label><input type="radio" name="q1" value="d"> Это экономическая система страны</label>
+        </div>
+
+        <div class="question">
+          <p><strong>2. Какой из примеров относится к гражданскому обществу?</strong></p>
+          <label><input type="radio" name="q2" value="a"> Президент РФ</label>
+          <label><input type="radio" name="q2" value="b"> Федеральное Собрание</label>
+          <label><input type="radio" name="q2" value="c"> Волонтёрский отряд помощи пожилым</label>
+          <label><input type="radio" name="q2" value="d"> Министерство обороны</label>
+        </div>
+
+        <div class="question">
+          <p><strong>3. Основная цель гражданского общества — это:</strong></p>
+          <label><input type="radio" name="q3" value="a"> Поддержка власти</label>
+          <label><input type="radio" name="q3" value="b"> Защита прав и интересов граждан</label>
+          <label><input type="radio" name="q3" value="c"> Сбор налогов</label>
+          <label><input type="radio" name="q3" value="d"> Управление экономикой</label>
+        </div>
+
+        <div class="question">
+          <p><strong>4. Какое из перечисленных НЕ является элементом гражданского общества?</strong></p>
+          <label><input type="radio" name="q4" value="a"> Общественные организации</label>
+          <label><input type="radio" name="q4" value="b"> Средства массовой информации</label>
+          <label><input type="radio" name="q4" value="c"> Судебная система</label>
+          <label><input type="radio" name="q4" value="d"> Профсоюзы</label>
+        </div>
+
+        <div class="question">
+          <p><strong>5. Гражданское общество способствует:</strong></p>
+          <label><input type="radio" name="q5" value="a"> Усилению диктатуры</label>
+          <label><input type="radio" name="q5" value="b"> Развитию демократии</label>
+          <label><input type="radio" name="q5" value="c"> Уменьшению числа школ</label>
+          <label><input type="radio" name="q5" value="d"> Централизации власти</label>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Проверить результат</button>
+        <button type="button" onclick="showPage('home')" style="background-color: #7f8c8d;">Вернуться на главную</button>
+      </form>
+
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <!-- Страница: Темы по общаге это тип между главным и играми впихнуть-->
+  <div id="topicsPage" class="page">
+    <div class="card">
+      <h2>📚 Все темы по обществознанию</h2>
+      <p>Выберите интересующий раздел для изучения:</p>
+
+      <ul style="list-style-type: none; padding: 0;">
+        <li style="margin-bottom: 1rem;">
+          <strong><a href="#" onclick="showPage('konstitutsiya')">Конституция Российской Федерации</a></strong>
+          <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">Основной закон страны, права человека, государственное устройство.</p>
+        </li>
+
+        <li style="margin-bottom: 1rem;">
+          <strong><a href="#" onclick="showPage('ekonomika')">Основы экономики</a></strong>
+          <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">Товары и услуги, спрос и предложение, типы экономик.</p>
+        </li>
+
+        <li style="margin-bottom: 1rem;">
+          <strong><a href="#" onclick="showPage('grazhdanskoe_obshchestvo')">Гражданское общество</a></strong>
+          <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">НКО, волонтёрство, участие граждан в жизни страны.</p>
+        </li>
+
+        <li style="margin-bottom: 1rem;">
+          <strong><a href="#" onclick="showPage('pravo')">Право и правонарушения</a></strong>
+          <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">Виды прав, нормы, ответственность, суд.</p>
+        </li>
+
+        <li style="margin-bottom: 1rem;">
+          <strong><a href="#" onclick="showPage('politika')">Политическая система</a></strong>
+          <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">Государство, власть, выборы, политические режимы.</p>
+        </li>
+
+        <li style="margin-bottom: 1rem;">
+          <strong><a href="#" onclick="showPage('sotsialnye_otnosheniya')">Социальные отношения</a></strong>
+          <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">Семья, классы, этнические группы, социальная мобильность.</p>
+        </li>
+
+        <li style="margin-bottom: 1rem;">
+          <strong><a href="#" onclick="showPage('dukhovnaya_kultura')">Духовная культура</a></strong>
+          <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">Наука, образование, религия, мораль, искусство.</p>
+        </li>
+      </ul>
+
+      <button type="button" onclick="showPage('home')" style="background-color: #7f8c8d;">
+        Вернуться на главную
+      </button>
+    </div>
+  </div>
+
+  <!-- Страница: Конституция РФ -->
+  <div id="konstitutsiyaPage" class="page">
+    <div class="card">
+      <h2>Что такое Конституция РФ?</h2>
+      <div style="text-align: center; margin: 1rem 0;">
+        <img src="https://cdn.eksmo.ru/v2/ITD000000001305463/COVER/cover1__w820.jpg"
+             alt="Обложка Конституции РФ"
+             style="max-width: 300px; width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+      </div>
+      <p>Конституция Российской Федерации — это основной закон государства. Она имеет высшую юридическую силу, прямое действие и применяется на всей территории России. Все другие законы и нормативные акты должны соответствовать Конституции.</p>
+      <p>Конституция определяет:</p>
+      <ul>
+        <li>Основы конституционного строя;</li>
+        <li>Права и свободы человека и гражданина;</li>
+        <li>Федеративное устройство России;</li>
+        <li>Систему органов государственной власти;</li>
+        <li>Порядок внесения изменений в Конституцию.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>История принятия</h2>
+      <p>Действующая Конституция РФ была принята всенародным голосованием (референдумом) <strong>12 декабря 1993 года</strong>. Она заменила собой Конституцию РСФСР 1978 года.</p>
+      <p>Процесс разработки новой Конституции начался в условиях острого политического кризиса между президентом Борисом Ельциным и Верховным Советом. После роспуска парламента в сентябре 1993 года была созвана Конституционная комиссия, которая подготовила проект основного закона.</p>
+      <p>На референдуме за принятие новой Конституции проголосовали около 58,4% участников.</p>
+    </div>
+
+    <div class="card">
+      <h2>Структура Конституции РФ</h2>
+      <p>Конституция состоит из:</p>
+      <ul>
+        <li><strong>Преамбулы</strong> — вводная часть, выражающая цели и ценности (хотя в юридическом смысле она не имеет нормативной силы);</li>
+        <li><strong>Двух разделов</strong>:
+          <ul>
+            <li><strong>Раздел первый</strong> — содержит 9 глав (137 статей);</li>
+            <li><strong>Раздел второй</strong> — заключительные и переходные положения.</li>
+          </ul>
+        </li>
+      </ul>
+      <p><strong>Главы раздела первого:</strong></p>
+      <ol>
+        <li>Основы конституционного строя</li>
+        <li>Права и свободы человека и гражданина</li>
+        <li>Федеративное устройство</li>
+        <li>Президент Российской Федерации</li>
+        <li>Федеральное Собрание (парламент)</li>
+        <li>Правительство Российской Федерации</li>
+        <li>Судебная власть и прокуратура</li>
+        <li>Местное самоуправление</li>
+        <li>Конституционные поправки и пересмотр Конституции</li>
+      </ol>
+    </div>
+
+    <button type="button" onclick="showPage('topics')" style="background-color: #7f8c8d;">
+      Назад к темам
+    </button>
+    <button type="button" onclick="showPage('home')" style="background-color: #543964; margin-left: 10px;">
+      На главную
+    </button>
+  </div>
+
+  <!-- Страница: Основы экономики -->
+  <div id="ekonomikaPage" class="page">
+    <div class="card">
+      <h2>Что такое экономика?</h2>
+      <p>Экономика — это наука о том, как люди и общество используют ограниченные ресурсы для удовлетворения своих безграничных потребностей. Она изучает производство, распределение и потребление товаров и услуг.</p>
+      <p>Основные вопросы экономики:</p>
+      <ul>
+        <li>Что производить?</li>
+        <li>Как производить?</li>
+        <li>Для кого производить?</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Экономические системы</h2>
+      <p>Существует несколько типов экономических систем:</p>
+      <ul>
+        <li><strong>Традиционная экономика</strong> — основанная на обычаях и традициях (например, у коренных народов).</li>
+        <li><strong>Командная (плановая) экономика</strong> — все решения принимает государство (как в СССР).</li>
+        <li><strong>Рыночная экономика</strong> — решения принимаются на основе спроса и предложения, через свободный рынок.</li>
+        <li><strong>Смешанная экономика</strong> — сочетание рыночных механизмов и государственного регулирования (как в современной России).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Основные экономические понятия</h2>
+      <p><strong>Товар</strong> — продукт труда, предназначенный для продажи.</p>
+      <p><strong>Услуга</strong> — деятельность, приносящая пользу, но не создающая материального продукта (например, образование, медицина).</p>
+      <p><strong>Спрос</strong> — желание и возможность покупателя приобрести товар по определённой цене.</p>
+      <p><strong>Предложение</strong> — количество товара, которое производители готовы продать по определённой цене.</p>
+      <p><strong>Цена</strong> — денежное выражение стоимости товара или услуги.</p>
+      <p><strong>Бюджет</strong> — план доходов и расходов на определённый период (личный, семейный, государственный).</p>
+    </div>
+
+    <button type="button" onclick="showPage('topics')" style="background-color: #7f8c8d;">
+      Назад к темам
+    </button>
+    <button type="button" onclick="showPage('home')" style="background-color: #543964; margin-left: 10px;">
+      На главную
+    </button>
+  </div>
+
+  <!-- Страница: Гражданское общество -->
+  <div id="grazhdanskoe_obshchestvoPage" class="page">
+    <div class="card">
+      <h2>Что такое гражданское общество?</h2>
+      <p>Гражданское общество — это совокупность негосударственных организаций и институтов, в которых проявляется активность граждан: семьи, СМИ, благотворительные фонды, профсоюзы, НКО, религиозные объединения и др.</p>
+
+      <h3>Признаки гражданского общества:</h3>
+      <ul>
+        <li>Свобода слова и собраний;</li>
+        <li>Наличие независимых от государства организаций;</li>
+        <li>Активное участие граждан в общественной жизни;</li>
+        <li>Уважение прав и свобод личности;</li>
+        <li>Самодеятельность и волонтёрство.</li>
+      </ul>
+
+      <h3>Примеры:</h3>
+      <p>— Экологические движения<br>
+         — Правозащитные организации<br>
+         — Студенческие советы<br>
+         — Женские клубы и сообщества</p>
+
+      <button type="button" onclick="showPage('topics')" style="background-color: #7f8c8d;">
+        Назад к темам
+      </button>
+      <button type="button" onclick="showPage('home')" style="background-color: #543964; margin-left: 10px;">
+        На главную
+      </button>
+    </div>
+  </div>
+
+  <!-- Страница   Право и правонарушения -->
+  <div id="pravoPage" class="page">
+    <div class="card">
+      <h2>Право и правонарушения</h2>
+      <p>Право — это система норм, установленных государством, обязательных для исполнения и обеспечивающих порядок в обществе.</p>
+
+      <h3>Виды прав:</h3>
+      <ul>
+        <li>Конституционные права (свобода слова, право на образование и т.д.)</li>
+        <li>Гражданские права (право на имущество, заключение договоров)</li>
+        <li>Трудовые права (право на отдых, безопасные условия труда)</li>
+        <li>Семейные права (права родителей и детей)</li>
+      </ul>
+
+      <h3>Правонарушения:</h3>
+      <p>Это действия, противоречащие нормам права. Они могут быть:</p>
+      <ul>
+        <li>Преступления (уголовно наказуемые)</li>
+        <li>Проступки (административные, дисциплинарные)</li>
+      </ul>
+
+      <h3>Суд и правосудие:</h3>
+      <p>Суд — орган, осуществляющий правосудие. Он решает споры между людьми, разбирает дела о преступлениях.</p>
+
+      <button type="button" onclick="showPage('topics')" style="background-color: #7f8c8d;">
+        Назад к темам
+      </button>
+      <button type="button" onclick="showPage('home')" style="background-color: #543964; margin-left: 10px;">
+        На главную
+      </button>
+    </div>
+  </div>
+
+  <!-- Страница: Политическая систмс-->
+  <div id="politikaPage" class="page">
+    <div class="card">
+      <h2>Политическая система</h2>
+      <p>Политическая система — это совокупность институтов, организаций и норм, через которые осуществляется власть в государстве.</p>
+
+      <h3>Элементы политической системы:</h3>
+      <ul>
+        <li>Государственные органы (президент, парламент, правительство)</li>
+        <li>Политические партии</li>
+        <li>Институты гражданского общества</li>
+        <li>Средства массовой информации</li>
+      </ul>
+
+      <h3>Формы правления:</h3>
+      <ul>
+        <li><strong>Монархия</strong> — глава государства — монарх</li>
+        <li><strong>Республика</strong> — глава государства — президент (избирается народом)</li>
+      </ul>
+
+      <h3>Выборы:</h3>
+      <p>Выборы — это способ участия граждан в управлении государством. Граждане выбирают депутатов, президента и т.д.</p>
+
+      <button type="button" onclick="showPage('topics')" style="background-color: #7f8c8d;">
+        Назад к темам
+      </button>
+      <button type="button" onclick="showPage('home')" style="background-color: #543964; margin-left: 10px;">
+        На главную
+      </button>
+    </div>
+  </div>
+
+  <!-- Страница: Соц отношения -->
+  <div id="sotsialnye_otnosheniyaPage" class="page">
+    <div class="card">
+      <h2>Социальные отношения</h2>
+      <p>Социальные отношения — это связи между людьми в обществе, основанные на их социальном положении, роли, интересах.</p>
+
+      <h3>Социальные группы:</h3>
+      <ul>
+        <li><strong>Семья</strong> — основная ячейка общества</li>
+        <li><strong>Классы</strong> — группы по уровню дохода и образования</li>
+        <li><strong>Этнические группы</strong> — нации, народности</li>
+        <li><strong>Профессиональные группы</strong> — врачи, учителя, инженеры</li>
+      </ul>
+
+      <h3>Социальная мобильность:</h3>
+      <p>Это перемещение человека из одной социальной группы в другую (например, повышение по службе).</p>
+
+      <h3>Социальная справедливость:</h3>
+      <p>Это равные возможности для всех членов общества, доступ к образованию, медицине, работе.</p>
+
+      <button type="button" onclick="showPage('topics')" style="background-color: #7f8c8d;">
+        Назад к темам
+      </button>
+      <button type="button" onclick="showPage('home')" style="background-color: #543964; margin-left: 10px;">
+        На главную
+      </button>
+    </div>
+  </div>
+
+  <!-- Страница: Духовная культура -->
+  <div id="dukhovnaya_kulturaPage" class="page">
+    <div class="card">
+      <h2>Духовная культура</h2>
+      <p>Духовная культура — это совокупность ценностей, идей, творчества, морали, религии, науки, искусства, формирующих внутренний мир человека и общества.</p>
+
+      <h3>Составляющие духовной культуры:</h3>
+      <ul>
+        <li><strong>Наука</strong> — система знаний, полученных через исследования</li>
+        <li><strong>Искусство</strong> — творчество (литература, музыка, живопись)</li>
+        <li><strong>Образование</strong> — школы, вузы, курсы</li>
+        <li><strong>Мораль</strong> — представления о добре и зле</li>
+        <li><strong>Религия</strong> — вера в бога, обряды, традиции</li>
+      </ul>
+
+      <h3>Значение:</h3>
+      <p>Духовная культура помогает человеку понять смысл жизни, воспитывает ценности, объединяет общество.</p>
+
+      <button type="button" onclick="showPage('topics')" style="background-color: #7f8c8d;">
+        Назад к темам
+      </button>
+      <button type="button" onclick="showPage('home')" style="background-color: #543964; margin-left: 10px;">
+        На главную
+      </button>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>Автор: Морозова Анна</p>
+</footer>
+
+<script>
+  function showPage(pageId) {
+    // Скрываем все страницы
+    document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+    // Показываем нужную
+    document.getElementById(pageId + 'Page').classList.add('active');
+
+    // Скрываем все заголовки
+    document.getElementById('mainTitle').style.display = 'none';
+    document.getElementById('testTitle').style.display = 'none';
+    document.getElementById('konstitutsiyaTitle').style.display = 'none';
+    document.getElementById('ekonomikaTitle').style.display = 'none';
+    document.getElementById('topicsTitle').style.display = 'none';
+
+    // Показываем нужный заголовок
+    if (pageId === 'home') {
+      document.getElementById('mainTitle').style.display = 'block';
+    } else if (pageId === 'test') {
+      document.getElementById('testTitle').style.display = 'block';
+    } else if (pageId === 'konstitutsiya') {
+      document.getElementById('konstitutsiyaTitle').style.display = 'block';
+    } else if (pageId === 'ekonomika') {
+      document.getElementById('ekonomikaTitle').style.display = 'block';
+    } else if (pageId === 'topics') {
+      document.getElementById('topicsTitle').style.display = 'block';
+    } else if (pageId === 'grazhdanskoe_obshchestvo' || pageId === 'pravo' || pageId === 'politika' || pageId === 'sotsialnye_otnosheniya' || pageId === 'dukhovnaya_kultura') {
+      document.getElementById('mainTitle').style.display = 'block';
+    }
+  }
+
+  function checkAnswers() {
+    const correctAnswers = {
+      q1: 'c',
+      q2: 'c',
+      q3: 'b',
+      q4: 'c',
+      q5: 'b'
+    };
+
+    let score = 0;
+    let total = Object.keys(correctAnswers).length;
+
+    for (let q in correctAnswers) {
+      const selected = document.querySelector(`input[name="${q}"]:checked`);
+      if (selected && selected.value === correctAnswers[q]) {
+        score++;
+      }
+    }
+
+    const resultDiv = document.getElementById('result');
+    let message = `Ваш результат: ${score} из ${total}`;
+
+    if (score === total) {
+      resultDiv.className = 'correct';
+      message += ' Отлично! Вы отлично знаете тему! :33';
+    } else if (score >= total * 0.6) {
+      resultDiv.className = 'good';
+      message += ' уже хорошо!';
+    } else {
+      resultDiv.className = 'wrong';
+      message += ' Повторите тему и попробуйте снова ;((';
+    }
+
+    resultDiv.innerHTML = message;
+  }
+</script>
+
+</body>
+</html>
